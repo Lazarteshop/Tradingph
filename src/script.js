@@ -2,18 +2,18 @@
 const Core = (() => {
   const state = {
     activeTrade: false,
-    startBalance: 1000,
-    balance: 1000,
-    wager: 100,
+    startBalance: 1.69,
+    balance: 1.69,
+    wager: 0.10,
     wagerIsPercent: false, // default: false = dollar amount
-    wagerPercent: 1, // default percent if percent-based (1% of balance)
-    duration: { hour: 0, minute: 0, second: 5 },
+    wagerPercent: 0.01, // default percent if percent-based (1% of balance)
+    duration: { hour: 0, minute: 0, second: 30 },
     trades: [],
     openTrades: [],
-    currentPrice: 100000,
+    currentPrice: 1000,
     candles: (() => {
       const candles = [];
-      let price = 100000;
+      let price = 1000;
       let trend = 1;
       for (let i = 0; i < 100; i++) {
         const volatility = 3;
@@ -846,7 +846,7 @@ document.getElementById('balance').onclick = () => {
     title: `Reset Your Balance`,
     content: `
       <p class="text-sm text-center mb-4 text-yellow-500">🕹️ Start a new run — all previous trades will vanish!</p>
-      <input id="balanceInput" type="number" min="1" step="1" placeholder="1,000" value="${Core.state.startBalance}">
+      <input id="balanceInput" type="number" min="1" step="1" placeholder="1,69" value="${Core.state.startBalance}"readonly>
     `,
     onLoad() {
       // Add event listener for the 'Enter' key
@@ -902,7 +902,7 @@ wagerButton.onclick = () => {
             placeholder="250"
             value="${Core.state.wager}"
             class="w-full p-2 border border-gray-600 rounded text-center"
-          >
+          readonly>
         </div>
 
         <div>
@@ -919,7 +919,7 @@ wagerButton.onclick = () => {
             placeholder="1"
             value="${Core.state.wagerPercent}"
             class="w-full p-2 border border-gray-600 rounded text-center"
-          >
+          readonly>
         </div>
       </div>
     `,
@@ -981,9 +981,9 @@ document.getElementById('duration').onclick = () => {
     content: `
       <div class="text-center">
         <div class="grid grid-cols-3 gap-2">
-          <input class="duration-input" id="durationHours" type="number" min="0" placeholder="00" value="${Core.state.duration.hour}" class="p-2 border border-gray-600 rounded">
-          <input class="duration-input" id="durationMinutes" type="number" min="0" max="59" placeholder="00" value="${Core.state.duration.minute}" class="p-2 border border-gray-600 rounded">
-          <input class="duration-input" id="durationSeconds" type="number" min="1" max="59" placeholder="00" value="${Core.state.duration.second}" class="p-2 border border-gray-600 rounded">
+          <input class="duration-input" id="durationHours" type="number" min="0" placeholder="00" value="${Core.state.duration.hour}" class="p-2 border border-gray-600 rounded"readonly>
+          <input class="duration-input" id="durationMinutes" type="number" min="0" max="59" placeholder="00" value="${Core.state.duration.minute}" class="p-2 border border-gray-600 rounded"readonly>
+          <input class="duration-input" id="durationSeconds" type="number" min="1" max="59" placeholder="00" value="${Core.state.duration.second}" class="p-2 border border-gray-600 rounded"readonly>
         </div>
         <div class="grid grid-cols-3 gap-2 text-sm text-gray-400">
           <span>Hours</span>
