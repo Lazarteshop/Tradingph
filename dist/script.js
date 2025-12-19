@@ -7,7 +7,7 @@ const Core = (() => {
     wager: 0.10,
     wagerIsPercent: false, // default: false = dollar amount
     wagerPercent: 0.01, // default percent if percent-based (1% of balance)
-    duration: { hour: 0, minute: 0, second: 30 },
+    duration: { hour: 0, minute: 0, second: 40 },
     trades: [],
     openTrades: [],
     currentPrice: 1000,
