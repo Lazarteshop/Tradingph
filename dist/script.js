@@ -2,8 +2,8 @@
 const Core = (() => {
   const state = {
     activeTrade: false,
-    startBalance: 1.69,
-    balance: 1.69,
+    startBalance: 2.69,
+    balance: 2.69,
     wager: 0.10,
     wagerIsPercent: false, // default: false = dollar amount
     wagerPercent: 0.01, // default percent if percent-based (1% of balance)
