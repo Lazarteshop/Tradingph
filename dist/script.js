@@ -16,10 +16,10 @@ const Core = (() => {
       let price = 1000;
       let trend = 1;
       for (let i = 0; i < 100; i++) {
-        const volatility = 1;
+        const volatility = 6;
         const open = price;
         const bodySize = Math.random() * volatility;
-        const direction = Math.random() > 0.3 ? trend : -trend;
+        const direction = Math.random() > 0.5 ? trend : -trend;
         const close = open + bodySize * direction;
         const high = Math.max(open, close) + Math.random();
         const low = Math.min(open, close) - Math.random();
