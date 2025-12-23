@@ -4,7 +4,7 @@ const Core = (() => {
     activeTrade: false,
     startBalance: 2.69,
     balance: 2.69,
-    wager: 0.10,
+    wager: 0.99,
     wagerIsPercent: false, // default: false = dollar amount
     wagerPercent: 0.01, // default percent if percent-based (1% of balance)
     duration: { hour: 0, minute: 0, second: 40 },
@@ -16,7 +16,7 @@ const Core = (() => {
       let price = 1000;
       let trend = 1;
       for (let i = 0; i < 100; i++) {
-        const volatility = 3;
+        const volatility = 5;
         const open = price;
         const bodySize = Math.random() * volatility;
         const direction = Math.random() > 0.3 ? trend : -trend;
